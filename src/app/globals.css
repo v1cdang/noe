@@ -1,0 +1,440 @@
+:root{
+  color-scheme: light dark;
+  --bg: #0b0d12;
+  --bg2: #0f1320;
+  --text: #e8ebf0;
+  --muted: rgba(232,235,240,0.68);
+  --card: rgba(255,255,255,0.06);
+  --card2: rgba(255,255,255,0.09);
+  --border: rgba(255,255,255,0.12);
+  --accent: #7c5cff;
+  --accent2: #4dd6ff;
+  --danger: #ff4d4d;
+  --success: #36d399;
+  --radius: 14px;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% 0%, rgba(124,92,255,0.25), transparent 60%),
+    radial-gradient(1000px 600px at 80% 0%, rgba(77,214,255,0.18), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  color: var(--text);
+}
+
+.appShell{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topBar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(0,0,0,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+.brand{
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.navLinks{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.navLink{
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navLink:hover{
+  color: var(--text);
+}
+
+.main{
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 18px 16px 60px;
+}
+
+.page{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+}
+
+.cardBlock{
+  margin-top: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 14px 14px;
+}
+
+.stack{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionTitle{
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.mutedText{
+  color: var(--muted);
+  margin: 0;
+}
+
+.upsellText{
+  margin: 12px 0 0;
+  color: rgba(77,214,255,0.95);
+}
+
+.successText{
+  color: var(--success);
+  margin: 0;
+}
+
+.errorText{
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.errorTextInline{
+  color: var(--danger);
+  font-weight: 700;
+  margin: 0;
+}
+
+.monoText{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.rowBetween{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title{
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+.subtitle{
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.promptList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promptCard{
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 12px 12px;
+  cursor: pointer;
+}
+
+.promptCardSelected{
+  border-color: rgba(77,214,255,0.85);
+  background: rgba(77,214,255,0.10);
+}
+
+.promptMeta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.promptSource{
+  font-size: 12px;
+  color: rgba(77,214,255,0.95);
+  font-weight: 800;
+}
+
+.promptCategory{
+  font-size: 12px;
+  color: rgba(232,235,240,0.78);
+}
+
+.promptText{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.premiumUpsell{
+  background: linear-gradient(135deg, rgba(124,92,255,0.18), rgba(77,214,255,0.10));
+}
+
+.moodGrid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.moodButton{
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 10px 6px;
+  cursor: pointer;
+  min-height: 64px;
+}
+
+.moodButtonSelected{
+  border-color: rgba(77,214,255,0.85);
+  background: rgba(77,214,255,0.10);
+}
+
+.moodEmoji{
+  display: block;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.moodScore{
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.textArea{
+  width: 100%;
+  background: rgba(0,0,0,0.22);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 10px 12px;
+  resize: vertical;
+  outline: none;
+}
+
+.toggleRow{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  user-select: none;
+}
+
+.toggleRowDisabled{
+  opacity: 0.6;
+}
+
+.ctaRow{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.segmented{
+  display: flex;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px;
+  border-radius: 14px;
+  margin-top: 10px;
+}
+
+.segmentButton{
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.segmentButtonSelected{
+  color: var(--text);
+  border-color: rgba(77,214,255,0.65);
+  background: rgba(77,214,255,0.10);
+}
+
+.formCard{
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fieldLabel{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(232,235,240,0.92);
+}
+
+.fieldInput{
+  width: 100%;
+  background: rgba(0,0,0,0.22);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.divider{
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 14px 0;
+}
+
+.featureList{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featureRow{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.featureTitle{
+  font-weight: 900;
+}
+
+.featureSub{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.lockedState{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.dangerButton{
+  border: 1px solid rgba(255,77,77,0.6);
+  background: rgba(255,77,77,0.12);
+  color: rgba(255,205,205,0.95);
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.twoCol{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customPromptList{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.customPromptRow{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.customPromptText{
+  flex: 1;
+}
+
+.customPromptPrompt{
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.customPromptMeta{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.chartWrap{
+  width: 100%;
+}
+
+.primaryButton,.secondaryButton{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primaryButton{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #070810;
+}
+
+.secondaryButton{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--text);
+}
+
+@media (min-width: 720px){
+  .ctaRow{
+    flex-direction: row;
+  }
+  .title{
+    font-size: 34px;
+  }
+  .promptList{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .promptCard{
+    flex: 1;
+    min-width: 260px;
+  }
+  .twoCol{
+    flex-direction: row;
+  }
+}
+
