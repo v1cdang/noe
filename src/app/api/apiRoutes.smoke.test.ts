@@ -8,6 +8,7 @@ const todayPromptRoute = require('@/app/api/today-prompt/route') as typeof impor
 const moodSubmitRoute = require('@/app/api/mood/submit/route') as typeof import('@/app/api/mood/submit/route');
 const moodHistoryRoute = require('@/app/api/mood/history/route') as typeof import('@/app/api/mood/history/route');
 const premiumUpgradeRoute = require('@/app/api/premium/upgrade/route') as typeof import('@/app/api/premium/upgrade/route');
+const journalsListRoute = require('@/app/api/journals/route') as typeof import('@/app/api/journals/route');
 
 const { createSupabaseServerClient } = require('@/lib/supabase/serverClient') as {
   createSupabaseServerClient: jest.Mock;
@@ -76,6 +77,15 @@ describe('API route smoke (unauthenticated)', () => {
 
     const req = {} as any;
     const res = await premiumUpgradeRoute.POST(req);
+    expect(res.status).toBe(401);
+  });
+
+  it('journals list returns 401 when unauthenticated', async () => {
+    const mock = mockUnauthorizedSupabase();
+    (createSupabaseServerClient as jest.Mock).mockResolvedValue(mock);
+
+    const req = { url: 'http://localhost/api/journals' } as any;
+    const res = await journalsListRoute.GET(req);
     expect(res.status).toBe(401);
   });
 });

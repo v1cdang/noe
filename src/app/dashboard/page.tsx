@@ -129,7 +129,12 @@ function Dashboard(): React.ReactElement {
 
   return (
     <section className="page">
-      <h1 className="title">Dashboard</h1>
+      <div className="rowBetween">
+        <h1 className="title">Dashboard</h1>
+        <a className="navLink" href="/journals">
+          Journal history
+        </a>
+      </div>
       <p className="subtitle">
         {todayIsoDate} · Pick a prompt, choose a mood, and write a few lines if you want.
       </p>
